@@ -1,10 +1,10 @@
 import { Card, Titulo, Descricao, Botao } from './styles'
 
 type Props = {
-  image: string;
-  title: string;
-  description: string;
-  button: string;
+  image: string
+  title: string
+  description: string
+  button: string
 }
 
 const Dish = ({ image, title, description, button }: Props) => (

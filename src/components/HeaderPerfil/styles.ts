@@ -18,7 +18,7 @@ export const TextoBase = styled.h3`
   font-size: 18px;
   margin-bottom: 83px;
   margin-top: 64px;
-`;
+`
 
 export const Nome = styled(TextoBase)`
   margin-left: 171px;

@@ -62,4 +62,3 @@ export const Nota = styled.h3`
   justify-content: flex-end;
   color: ${cores.rosa_escuro};
 `
-

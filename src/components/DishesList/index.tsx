@@ -1,6 +1,6 @@
-import Product from "../../models/Product"
-import Dish from "../Dishes"
-import { Container, List } from "./styles"
+import Product from '../../models/Product'
+import Dish from '../Dishes'
+import { Container, List } from './styles'
 
 export type Props = {
   dishes: Product[]
@@ -17,7 +17,7 @@ const DishesList = ({ dishes }: Props) => (
             title={dish.title}
             description={dish.description}
             button={dish.button}
-        />
+          />
         ))}
       </List>
     </div>
