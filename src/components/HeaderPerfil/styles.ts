@@ -33,3 +33,9 @@ export const Logo = styled.img`
   height: auto;
   margin: 0 auto;
 `
+
+export const ImgResto = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+`
