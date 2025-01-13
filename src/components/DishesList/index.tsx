@@ -1,27 +1,35 @@
-import Product from '../../models/Product'
 import Dish from '../Dishes'
 import { Container, List } from './styles'
+import { Restaurante } from '../../pages/Home'
 
 export type Props = {
-  dishes: Product[]
+  restaurants: Restaurante[]
 }
 
-const DishesList = ({ dishes }: Props) => (
-  <Container>
-    <div className="container">
-      <List>
-        {dishes.map((dish) => (
-          <Dish
-            key={dish.id}
-            image={dish.image}
-            title={dish.title}
-            description={dish.description}
-            button={dish.button}
-          />
-        ))}
-      </List>
-    </div>
-  </Container>
+const DishesList = ({ restaurants }: Props) => (
+  <>
+    <Container>
+      <div className="container">
+        <List>
+          {Array.isArray(restaurants) &&
+            restaurants.map(
+              (restaurant) =>
+                Array.isArray(restaurant.cardapio) &&
+                restaurant.cardapio.map((dish) => (
+                  <Dish
+                    key={dish.id}
+                    image={dish.foto}
+                    title={dish.nome}
+                    description={dish.descricao}
+                    preco={dish.preco}
+                    porcao={dish.porcao}
+                  />
+                ))
+            )}
+        </List>
+      </div>
+    </Container>
+  </>
 )
 
 export default DishesList

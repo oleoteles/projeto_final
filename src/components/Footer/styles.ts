@@ -5,7 +5,7 @@ export const Container = styled.footer`
   background-color: ${cores.rosa_claro};
   padding: 40px 444px;
   display: flex;
-  flex-direction: column; /* Alinha os itens verticalmente */
+  flex-direction: column;
   align-items: center;
   margin-top: 120px;
 `

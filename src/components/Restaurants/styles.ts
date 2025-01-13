@@ -17,9 +17,9 @@ export const Card = styled.section`
 `
 export const Box = styled.div`
   border: 1px solid ${cores.rosa_escuro};
+  border-top: none;
   width: 100%;
-  max-width: 472px;
-  height: 181px;
+  height: 180px;
   position: relative;
   overflow: hidden;
 `
@@ -39,6 +39,7 @@ export const Descricao = styled.p`
   display: block;
   margin-top: 16px 0 0;
   margin-left: 7px;
+  margin-bottom: 16px;
   color: ${cores.rosa_escuro};
 `
 
@@ -61,4 +62,11 @@ export const Nota = styled.h3`
   display: flex;
   justify-content: flex-end;
   color: ${cores.rosa_escuro};
+`
+
+export const Capa = styled.img`
+  display: block;
+  width: 100%;
+  height: 217px;
+  object-fit: cover;
 `

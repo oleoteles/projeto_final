@@ -10,7 +10,7 @@ export const Botao = styled(Link)`
   font-weight: 700;
   padding: 4px 6px;
   text-align: center;
-  margin: 20px 0 20px 7px;
+  margin: 8px;
   border: none;
   cursor: pointer;
   text-decoration: none;
