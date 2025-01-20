@@ -1,7 +1,18 @@
 import Tag from '../Tag'
 
-import { Box, Card, Descricao, Titulo, Category, Nota, Capa } from './styles'
+import {
+  Box,
+  Card,
+  Descricao,
+  Titulo,
+  Category,
+  Nota,
+  Capa,
+  Estrela,
+  NotaContainer
+} from './styles'
 import Botao from '../Button'
+import star from '../../assets/images/estrela.png'
 
 type Props = {
   title: string
@@ -40,7 +51,10 @@ const Restaurants = ({
       </Category>
       <Box>
         <Titulo>{title}</Titulo>
-        <Nota>{note}</Nota>
+        <NotaContainer>
+          <Nota>{note}</Nota>
+          <Estrela src={star} alt="estrela" />
+        </NotaContainer>
         <Descricao>{getDescricao(description)}</Descricao>
         <Botao
           type="link"

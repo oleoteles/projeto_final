@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Container = styled.footer`
   background-color: ${cores.rosa_claro};
@@ -8,6 +8,10 @@ export const Container = styled.footer`
   flex-direction: column;
   align-items: center;
   margin-top: 120px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
+  }
 `
 
 export const Logo = styled.img`

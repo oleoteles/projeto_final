@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.section`
@@ -13,6 +13,10 @@ export const Card = styled.section`
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 16px;
   }
 `
 export const Box = styled.div`
@@ -37,10 +41,13 @@ export const Descricao = styled.p`
   font-size: 14px;
   line-height: 22px;
   display: block;
-  margin-top: 16px 0 0;
-  margin-left: 7px;
-  margin-bottom: 16px;
+  margin: 16px 7px 16px 7px;
   color: ${cores.rosa_escuro};
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 12px;
+    line-height: 18px;
+  }
 `
 
 export const Category = styled.div`
@@ -54,14 +61,23 @@ export const Category = styled.div`
 `
 
 export const Nota = styled.h3`
-  position: absolute;
   font-weight: bold;
   font-size: 18px;
+  color: ${cores.rosa_escuro};
+  margin: 0;
+`
+export const Estrela = styled.img`
+  width: 21px;
+  height: 21px;
+`
+
+export const NotaContainer = styled.div`
+  position: absolute;
   top: 8px;
   right: 16px;
   display: flex;
-  justify-content: flex-end;
-  color: ${cores.rosa_escuro};
+  align-items: center;
+  gap: 8px;
 `
 
 export const Capa = styled.img`

@@ -16,14 +16,7 @@ const DishesList = ({ restaurants }: Props) => (
               (restaurant) =>
                 Array.isArray(restaurant.cardapio) &&
                 restaurant.cardapio.map((dish) => (
-                  <Dish
-                    key={dish.id}
-                    image={dish.foto}
-                    title={dish.nome}
-                    description={dish.descricao}
-                    preco={dish.preco}
-                    porcao={dish.porcao}
-                  />
+                  <Dish key={dish.id} cardapio={dish} />
                 ))
             )}
         </List>

@@ -11,16 +11,16 @@ import {
 
 import fechar from '../../assets/images/fechar.png'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { add, open } from '../../store/reducers/cart'
+import { CardapioItens, Restaurante } from '../../pages/Home'
 
 type Props = {
-  image: string
-  title: string
-  description: string
-  preco: number
-  porcao: string
+  cardapio: CardapioItens
 }
 
-const Dish = ({ image, title, description, preco, porcao }: Props) => {
+const Dish = ({ cardapio }: Props) => {
   const [modalEstaAberto, setModalEstaAberto] = useState(false)
   const getDescricao = (descricao: string) => {
     if (descricao.length > 168) {
@@ -28,14 +28,20 @@ const Dish = ({ image, title, description, preco, porcao }: Props) => {
     }
     return descricao
   }
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(cardapio))
+    dispatch(open())
+  }
 
   return (
     <>
       <section>
         <Card>
-          <img src={image} alt={title} />
-          <Titulo>{title}</Titulo>
-          <Descricao>{getDescricao(description)}</Descricao>
+          <img src={cardapio.foto} alt={cardapio.nome} />
+          <Titulo>{cardapio.nome}</Titulo>
+          <Descricao>{getDescricao(cardapio.descricao)}</Descricao>
           <Botao onClick={() => setModalEstaAberto(true)}>Mais detalhes</Botao>
         </Card>
       </section>
@@ -47,19 +53,19 @@ const Dish = ({ image, title, description, preco, porcao }: Props) => {
             src={fechar}
             alt="ícone de fechar"
           />
-          <Image src={image} alt={`imagem de ${title}`} />
+          <Image src={cardapio.foto} alt={`imagem de ${cardapio.nome}`} />
           <div>
             <header>
-              <h4>{title}</h4>
-              <p>{description}</p>
+              <h4>{cardapio.nome}</h4>
+              <p>{cardapio.descricao}</p>
             </header>
-            <p>{porcao}</p>
-            <BotaoModal>
+            <p>{cardapio.porcao}</p>
+            <BotaoModal onClick={addToCart}>
               Adicionar ao carrinho -{' '}
               {new Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL'
-              }).format(preco)}
+              }).format(cardapio.preco)}
             </BotaoModal>
           </div>
         </ModalContent>

@@ -12,6 +12,7 @@ export type CardapioItens = {
 }
 
 export type Restaurante = {
+  foto: string
   id: number
   titulo: string
   destacado: boolean
