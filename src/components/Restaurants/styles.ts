@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { TagContainer } from '../Tag/styles'
 
 export const Card = styled.section`
-  background-color: ${cores.branco};
+  background-color: ${colors.white};
   position: relative;
   overflow: hidden;
 
@@ -20,7 +20,7 @@ export const Card = styled.section`
   }
 `
 export const Box = styled.div`
-  border: 1px solid ${cores.rosa_escuro};
+  border: 1px solid ${colors.dark_pink};
   border-top: none;
   width: 100%;
   height: 180px;
@@ -28,21 +28,21 @@ export const Box = styled.div`
   overflow: hidden;
 `
 
-export const Titulo = styled.h3`
+export const Title = styled.h3`
   font-weight: bold;
   font-size: 18px;
   display: block;
   margin: 8px 0 16px;
   margin-left: 7px;
-  color: ${cores.rosa_escuro};
+  color: ${colors.dark_pink};
 `
 
-export const Descricao = styled.p`
+export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   display: block;
   margin: 16px 7px 16px 7px;
-  color: ${cores.rosa_escuro};
+  color: ${colors.dark_pink};
 
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 12px;
@@ -60,18 +60,18 @@ export const Category = styled.div`
   gap: 8px;
 `
 
-export const Nota = styled.h3`
+export const Note = styled.h3`
   font-weight: bold;
   font-size: 18px;
-  color: ${cores.rosa_escuro};
+  color: ${colors.dark_pink};
   margin: 0;
 `
-export const Estrela = styled.img`
+export const Star = styled.img`
   width: 21px;
   height: 21px;
 `
 
-export const NotaContainer = styled.div`
+export const NoteContainer = styled.div`
   position: absolute;
   top: 8px;
   right: 16px;
@@ -80,7 +80,7 @@ export const NotaContainer = styled.div`
   gap: 8px;
 `
 
-export const Capa = styled.img`
+export const Cover = styled.img`
   display: block;
   width: 100%;
   height: 217px;

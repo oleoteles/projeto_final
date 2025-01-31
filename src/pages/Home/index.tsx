@@ -1,27 +1,8 @@
 import RestaurantsList from '../../components/RestaurantsList'
 import Header from '../../components/Header'
 import { useEffect, useState } from 'react'
-
-export type CardapioItens = {
-  foto: string
-  preco: number
-  id: number
-  nome: string
-  descricao: string
-  porcao: string
-}
-
-export type Restaurante = {
-  foto: string
-  id: number
-  titulo: string
-  destacado: boolean
-  tipo: string
-  avaliacao: number
-  descricao: string
-  capa: string
-  cardapio: CardapioItens[]
-}
+import { useGetRestaurantsQuery } from '../../services/api'
+import Loader from '../../components/Loader'
 
 const Home = () => {
   const [opcoes, setOpcoes] = useState<Restaurante[]>([])
@@ -32,10 +13,21 @@ const Home = () => {
       .then((res) => setOpcoes(res))
   }, [])
 
+  const { data: restaurants } = useGetRestaurantsQuery()
+
+  if (restaurants) {
+    return (
+      <>
+        <Header />
+        <RestaurantsList restaurants={opcoes} />
+      </>
+    )
+  }
+
   return (
     <>
       <Header />
-      <RestaurantsList restaurants={opcoes} />
+      <Loader />
     </>
   )
 }

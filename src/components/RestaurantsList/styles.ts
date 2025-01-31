@@ -12,5 +12,6 @@ export const List = styled.ul`
 
   @media (max-width: ${breakpoints.desktop}) {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 `

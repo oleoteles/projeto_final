@@ -1,4 +1,4 @@
-import { Botao } from './styles'
+import { MainButton } from './styles'
 
 type Props = {
   type: 'link'
@@ -8,9 +8,9 @@ type Props = {
 }
 
 const Button = ({ title, to, children }: Props) => (
-  <Botao title={title} to={to as string}>
+  <MainButton title={title} to={to as string}>
     {children}
-  </Botao>
+  </MainButton>
 )
 
 export default Button

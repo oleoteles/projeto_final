@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 import lixeira from '../../assets/images/lixeira_de_reciclagem.png'
 
@@ -29,11 +29,18 @@ export const CartContainer = styled.div`
 `
 
 export const SideBar = styled.aside`
-  background-color: ${cores.rosa_escuro};
+  background-color: ${colors.dark_pink};
   z-index: 1;
   padding: 32px 8px 0 8px;
   max-width: 360px;
   width: 100%;
+
+  .empty-text {
+    font-size: 14px;
+    line-height: 22px;
+    color: ${colors.light_pink};
+    text-align: center;
+  }
 `
 export const Total = styled.div`
   display: flex;
@@ -45,12 +52,12 @@ export const Total = styled.div`
 export const Prices = styled.p`
   font-weight: 700;
   font-size: 14px;
-  color: ${cores.branco};
+  color: ${colors.white};
 `
 
 export const CartItem = styled.li`
   display: flex;
-  background-color: ${cores.rosa_claro};
+  background-color: ${colors.light_pink};
   width: 344px;
   height: 100px;
   margin-top: 16px;
@@ -64,7 +71,7 @@ export const CartItem = styled.li`
   }
 
   h3 {
-    color: ${cores.rosa_escuro};
+    color: ${colors.dark_pink};
     font-weight: 900;
     font-size: 18px;
     margin-top: 8px;
@@ -72,7 +79,7 @@ export const CartItem = styled.li`
 
   span {
     display: block;
-    color: ${cores.rosa_escuro};
+    color: ${colors.dark_pink};
     font-weight: 400;
     font-size: 14px;
     margin-top: 16px;

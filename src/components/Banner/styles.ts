@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Image = styled.div<{ src: string }>`
   width: 100%;
@@ -15,7 +15,7 @@ export const Image = styled.div<{ src: string }>`
 
 export const Title = styled.h2`
   text-transform: capitalize;
-  color: ${cores.branco};
+  color: ${colors.white};
   font-size: 32px;
   font-weight: 100;
   padding-top: 25px;
@@ -24,7 +24,7 @@ export const Title = styled.h2`
 `
 
 export const NameRest = styled.h2`
-  color: ${cores.branco};
+  color: ${colors.white};
   font-size: 32px;
   font-weight: 900;
   margin-top: 200px;

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Vector = styled.header`
   width: 100%;
@@ -10,8 +10,8 @@ export const Vector = styled.header`
   align-items: center;
 `
 
-export const Nome = styled.h1`
-  color: ${cores.rosa_escuro};
+export const Name = styled.h1`
+  color: ${colors.dark_pink};
   font-weight: 900;
   font-size: 36px;
   line-height: 42px;

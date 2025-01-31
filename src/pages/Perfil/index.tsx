@@ -2,31 +2,29 @@ import { useParams } from 'react-router-dom'
 import DishesList from '../../components/DishesList'
 import HeaderPerfil from '../../components/HeaderPerfil'
 
-import { useEffect, useState } from 'react'
-import { Restaurante } from '../Home'
 import Banner from '../../components/Banner'
-import { useGetDishQuery } from '../../services/api'
 import Cart from '../../components/Cart'
+import Checkout from '../../components/Checkout'
+import Payment from '../../components/Payment'
+import Loader from '../../components/Loader'
 
-// export type Props = {
-//   restaurants: Restaurante[]
-// }
+import { useGetRestaurantByIdQuery } from '../../services/api'
+
+type RestaurantParams = {
+  id: string
+}
 
 const Perfil = () => {
-  const { id } = useParams()
-  const { data: restaurante } = useGetDishQuery(id!)
-
-  // const [restaurante, setRestaurante] = useState<Restaurante | null>(null)
-
-  // useEffect(() => {
-  //   fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-  //     .then((res) => res.json())
-  //     .then((res) => setRestaurante(res))
-  //     .catch((err) => console.error('Erro ao carregar cardápio:', err))
-  // }, [id])
+  const { id } = useParams() as RestaurantParams
+  const { data: restaurante } = useGetRestaurantByIdQuery(id)
 
   if (!restaurante) {
-    return <p>Carregando...</p>
+    return (
+      <>
+        <HeaderPerfil />
+        <Loader />
+      </>
+    )
   }
 
   return (
@@ -39,6 +37,8 @@ const Perfil = () => {
       />
       <DishesList restaurants={[restaurante]} />
       <Cart />
+      <Checkout />
+      <Payment />
     </>
   )
 }

@@ -1,9 +1,9 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
-export const cores = {
-  branco: '#fff',
-  rosa_claro: '#FFEBD9',
-  rosa_escuro: '#E66767'
+export const colors = {
+  white: '#fff',
+  light_pink: '#FFEBD9',
+  dark_pink: '#E66767'
 }
 
 export const breakpoints = {
@@ -19,13 +19,13 @@ export const GlobalCss = createGlobalStyle`
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
     overflow-x: hidden;
-    background-color: ${cores.rosa_claro}
-    color: ${cores.rosa_escuro}
+    background-color: ${colors.light_pink}
+    color: ${colors.dark_pink}
   }
 
   body {
-  background-color: ${cores.rosa_claro}
-  color: ${cores.rosa_escuro}
+  background-color: ${colors.light_pink}
+  color: ${colors.dark_pink}
   }
 
   .container {

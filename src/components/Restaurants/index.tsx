@@ -1,17 +1,7 @@
 import Tag from '../Tag'
 
-import {
-  Box,
-  Card,
-  Descricao,
-  Titulo,
-  Category,
-  Nota,
-  Capa,
-  Estrela,
-  NotaContainer
-} from './styles'
-import Botao from '../Button'
+import * as S from './styles'
+import MainButton from '../Button'
 import star from '../../assets/images/estrela.png'
 
 type Props = {
@@ -32,39 +22,39 @@ const Restaurants = ({
   note,
   id
 }: Props) => {
-  const getDescricao = (descricao: string) => {
-    if (descricao.length > 231) {
-      return descricao.slice(0, 231) + '...'
+  const getDescription = (text: string) => {
+    if (text.length > 231) {
+      return text.slice(0, 231) + '...'
     }
-    return descricao
+    return text
   }
 
   return (
-    <Card>
-      <Capa src={image} alt={title} />
-      <Category>
+    <S.Card>
+      <S.Cover src={image} alt={title} />
+      <S.Category>
         {category.map((category) => (
           <Tag key={category} size={'small'}>
             {category}
           </Tag>
         ))}
-      </Category>
-      <Box>
-        <Titulo>{title}</Titulo>
-        <NotaContainer>
-          <Nota>{note}</Nota>
-          <Estrela src={star} alt="estrela" />
-        </NotaContainer>
-        <Descricao>{getDescricao(description)}</Descricao>
-        <Botao
+      </S.Category>
+      <S.Box>
+        <S.Title>{title}</S.Title>
+        <S.NoteContainer>
+          <S.Note>{note}</S.Note>
+          <S.Star src={star} alt="estrela" />
+        </S.NoteContainer>
+        <S.Description>{getDescription(description)}</S.Description>
+        <MainButton
           type="link"
           to={`/restaurantes/${id}`}
           title="Clique aqui para saber mais"
         >
           Saber mais
-        </Botao>
-      </Box>
-    </Card>
+        </MainButton>
+      </S.Box>
+    </S.Card>
   )
 }
 

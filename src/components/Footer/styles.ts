@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Container = styled.footer`
-  background-color: ${cores.rosa_claro};
+  background-color: ${colors.light_pink};
   padding: 40px 444px;
   display: flex;
   flex-direction: column;
@@ -25,10 +25,11 @@ export const Links = styled.ul`
 
 export const Link = styled.a`
   margin-right: 8px;
+  cursor: pointer;
 `
 
-export const Descricao = styled.p`
-  color: ${cores.rosa_escuro};
+export const Description = styled.p`
+  color: ${colors.dark_pink};
   font-weight: 400;
   font-size: 10px;
   text-align: center;

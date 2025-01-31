@@ -1,9 +1,10 @@
 import styled from 'styled-components'
-import { breakpoints, cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Card = styled.div`
-  background-color: ${cores.rosa_escuro};
+  background-color: ${colors.dark_pink};
   padding: 8px;
+  height: 100%;
 
   img {
     display: block;
@@ -12,16 +13,16 @@ export const Card = styled.div`
     object-fit: cover;
   }
 `
-export const Titulo = styled.h3`
-  color: ${cores.rosa_claro};
+export const Title = styled.h3`
+  color: ${colors.light_pink};
   font-weight: 900;
   font-size: 16px;
   display: block;
   margin: 8px 0;
 `
 
-export const Descricao = styled.p`
-  color: ${cores.rosa_claro};
+export const Description = styled.p`
+  color: ${colors.light_pink};
   font-weight: 400;
   font-size: 14px;
   display: block;
@@ -29,9 +30,9 @@ export const Descricao = styled.p`
   line-height: 22px;
 `
 
-export const Botao = styled.button`
-  background-color: ${cores.rosa_claro};
-  color: ${cores.rosa_escuro};
+export const SButton = styled.button`
+  background-color: ${colors.light_pink};
+  color: ${colors.dark_pink};
   font-weight: 700;
   font-size: 14px;
   padding: 4px 16px;
@@ -42,9 +43,9 @@ export const Botao = styled.button`
   width: 100%;
 `
 
-export const BotaoModal = styled.button`
-  background-color: ${cores.rosa_claro};
-  color: ${cores.rosa_escuro};
+export const ModalButton = styled.button`
+  background-color: ${colors.light_pink};
+  color: ${colors.dark_pink};
   font-weight: 700;
   font-size: 14px;
   padding: 4px 7px;
@@ -82,7 +83,7 @@ export const Modal = styled.div`
 `
 
 export const ModalContent = styled.div`
-  background-color: ${cores.rosa_escuro};
+  background-color: ${colors.dark_pink};
   padding: 32px;
   max-width: 1024px;
   max-height: 344px;
@@ -111,12 +112,12 @@ export const ModalContent = styled.div`
     cursor: pointer;
 
     &:hover {
-      color: ${cores.rosa_claro};
+      color: ${colors.light_pink};
     }
   }
 
   h4 {
-    color: ${cores.branco};
+    color: ${colors.white};
     font-weight: 900;
     font-size: 18px;
     margin-bottom: 8px;
@@ -127,7 +128,7 @@ export const ModalContent = styled.div`
   }
 
   p {
-    color: ${cores.branco};
+    color: ${colors.white};
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;

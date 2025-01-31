@@ -1,12 +1,12 @@
 import logoImage from '../../assets/images/logo.png'
-import { Logo, Nome, Vector } from './styles'
+import * as S from './styles'
 import vectorImg from '../../assets/images/vector_home.png'
 
 const Header = () => (
-  <Vector style={{ backgroundImage: `url(${vectorImg})` }}>
-    <Logo src={logoImage} alt="logo da marca" />
-    <Nome>Viva experiências gastronômicas no conforto da sua casa</Nome>
-  </Vector>
+  <S.Vector style={{ backgroundImage: `url(${vectorImg})` }}>
+    <S.Logo src={logoImage} alt="logo da marca" />
+    <S.Name>Viva experiências gastronômicas no conforto da sua casa</S.Name>
+  </S.Vector>
 )
 
 export default Header

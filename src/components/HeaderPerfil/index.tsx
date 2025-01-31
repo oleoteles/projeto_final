@@ -1,4 +1,4 @@
-import { Carrinho, Div, Logo, Nome, Vector } from './styles'
+import * as S from './styles'
 
 import vectorImg from '../../assets/images/Vector.png'
 import logoImage from '../../assets/images/logo.png'
@@ -17,15 +17,15 @@ const HeaderPerfil = () => {
 
   return (
     <>
-      <Vector style={{ backgroundImage: `url(${vectorImg})` }}>
-        <Div>
-          <Nome>Restaurantes</Nome>
-          <Logo src={logoImage} alt="logo da marca" />
-          <Carrinho onClick={openCart}>
+      <S.Vector style={{ backgroundImage: `url(${vectorImg})` }}>
+        <S.Div>
+          <S.Name>Restaurantes</S.Name>
+          <S.Logo src={logoImage} alt="logo da marca" />
+          <S.Car role="button" onClick={openCart}>
             {items.length} produto(s) no carrinho
-          </Carrinho>
-        </Div>
-      </Vector>
+          </S.Car>
+        </S.Div>
+      </S.Vector>
     </>
   )
 }
